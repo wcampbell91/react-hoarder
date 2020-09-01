@@ -1,15 +1,35 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+
+import fbConnection from '../helpers/data/connection';
+import Auth from '../components/pages/Auth/Auth';
+
 import './App.scss';
 
-class App extends React.Component {
-  render() {
-    return (
-      <div className="App">
-        <h2>INSIDE APP COMPONENT</h2>
-        <button className="btn btn-info"><i class="fab fa-jenkins"></i> Junk Pile Button</button>
-      </div>
-    );
-  }
-}
+fbConnection();
+const App = () => {
+  const [authed, setAuthed] = useState(false);
+
+  useEffect(() => {
+    const removeListener = firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        setAuthed(true);
+      } else {
+        setAuthed(false);
+      }
+    });
+    return () => removeListener();
+  }, []);
+
+  return (
+    <div className="App">
+      {authed
+        ? <Auth />
+        : ''
+      }
+    </div>
+  );
+};
 
 export default App;
