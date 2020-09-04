@@ -21,35 +21,26 @@ const MyNavbar = (props) => {
   const buildNavbar = () => {
     if (authed) {
       return (
-      <div>
-        <nav className="navbar navbar-light ml-auto">
-          <ul className="nav-item text-left">
-            <NavLink className="text-light" tag={NavLink} to="/home">Home</NavLink>
-          </ul>
-          <ul className="nav-item text-left">
-            <NavLink className="text-light" tag={NavLink} to="/mystuff">My Stuff</NavLink>
-          </ul>
-          <ul className="nav-item">
-            <NavLink className="text-light" tag={NavLink} to="/new">New</NavLink>
-          </ul>
-          <ul className="nav-item">
-            <button className="btn btn-warning" onClick={logMeOut}>Logout</button>
-          </ul>
+        <nav className="ml-auto">
+          <NavLink className="text-dark mr-3" tag={NavLink} to="/home">Home</NavLink>
+          <NavLink className="text-dark mr-3" tag={NavLink} to="/mystuff">My Stuff</NavLink>
+          <NavLink className="text-dark mr-3" tag={NavLink} to="/new">New</NavLink>
+          <button className="btn btn-warning" onClick={logMeOut}>Logout</button>
         </nav>
-      </div>
       );
     }
   };
-  return (
-    <div>
-      <nav>
-      <a class="navbar-brand" href="/">Hoarder</a>
-        <button class="navbar-toggler" type="button" onClick={toggle}>
-          <span class="navbar-toggler-icon"></span>
-        </button>
 
-      </nav>
-    </div>
+  return (
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <NavLink class="navbar-brand" to="/">Hoarder</NavLink>
+      <button class="navbar-toggler" type="button" onClick={toggle}>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" isOpen={isOpen}>
+          {buildNavbar()}
+      </div>
+    </nav>
   );
 };
 
