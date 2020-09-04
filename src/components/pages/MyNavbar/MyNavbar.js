@@ -25,7 +25,7 @@ const MyNavbar = (props) => {
         <nav className="ml-auto">
           <NavLink className="text-dark mr-3" tag={NavLink} to="/home">Home</NavLink>
           <NavLink className="text-dark mr-3" tag={NavLink} to="/stuff">My Stuff</NavLink>
-          <NavLink className="text-dark mr-3" tag={NavLink} to="/stuffName/new">New</NavLink>
+          <NavLink className="text-dark mr-3" tag={NavLink} to="/stuff/new">New</NavLink>
           <button className="btn btn-warning" onClick={logMeOut}>Logout</button>
         </nav>
       );
