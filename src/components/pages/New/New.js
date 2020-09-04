@@ -45,7 +45,7 @@ const New = () => {
   return (
     <div>
       <h1>Add Some Junk</h1>
-      <form>
+      <form className="col-6 offset-3">
         <div class="form-group">
           <label htmlFor="itemName">Item Name</label>
           <input
