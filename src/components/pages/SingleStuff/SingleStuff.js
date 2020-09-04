@@ -2,7 +2,7 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 
 // eslint-disable-next-line arrow-body-style
-const Stuff = (props) => {
+const SingleStuff = (props) => {
   return (
     <div>
       <h1>Single Stuff</h1>
@@ -10,4 +10,4 @@ const Stuff = (props) => {
   );
 };
 
-export default Stuff;
+export default SingleStuff;

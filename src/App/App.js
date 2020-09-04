@@ -15,7 +15,7 @@ import Home from '../components/pages/Home/Home';
 import MyStuff from '../components/pages/MyStuff/MyStuff';
 import New from '../components/pages/New/New';
 import Edit from '../components/pages/Edit/Edit';
-import Stuff from '../components/pages/Stuff/Stuff';
+import SingleStuff from '../components/pages/SingleStuff/SingleStuff';
 
 import './App.scss';
 
@@ -56,10 +56,10 @@ const App = () => {
           <div className="container">
             <Switch>
               <PrivateRoute path="/home" component={Home} authed={authed} />
-              <PrivateRoute path="/new" component={New} authed={authed} />
-              <PrivateRoute path="/myStuff" component={MyStuff} authed={authed} />
+              <PrivateRoute path="/stuff/new" component={New} authed={authed} />
+              <PrivateRoute path="/stuff" component={MyStuff} authed={authed} />
               <PrivateRoute path="/edit/:stuffId" component={Edit} authed={authed} />
-              <PrivateRoute path="/stuff/:stuffId" component={Stuff} authed={authed} />
+              <PrivateRoute path="/single/:stuffId" component={SingleStuff} authed={authed} />
               <PublicRoute path="/auth" component={Auth} authed={authed} />
               <Redirect from="*" to="/home" />
             </Switch>
