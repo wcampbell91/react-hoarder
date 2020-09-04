@@ -18,13 +18,14 @@ const MyNavbar = (props) => {
     setIsOpen(!isOpen);
   };
 
+  // eslint-disable-next-line consistent-return
   const buildNavbar = () => {
     if (authed) {
       return (
         <nav className="ml-auto">
           <NavLink className="text-dark mr-3" tag={NavLink} to="/home">Home</NavLink>
-          <NavLink className="text-dark mr-3" tag={NavLink} to="/mystuff">My Stuff</NavLink>
-          <NavLink className="text-dark mr-3" tag={NavLink} to="/new">New</NavLink>
+          <NavLink className="text-dark mr-3" tag={NavLink} to="/stuff">My Stuff</NavLink>
+          <NavLink className="text-dark mr-3" tag={NavLink} to="/stuffName/new">New</NavLink>
           <button className="btn btn-warning" onClick={logMeOut}>Logout</button>
         </nav>
       );
@@ -32,12 +33,12 @@ const MyNavbar = (props) => {
   };
 
   return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <NavLink class="navbar-brand" to="/">Hoarder</NavLink>
-      <button class="navbar-toggler" type="button" onClick={toggle}>
-        <span class="navbar-toggler-icon"></span>
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <NavLink className="navbar-brand" to="/">Hoarder</NavLink>
+      <button className="navbar-toggler" type="button" onClick={toggle}>
+        <span className="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" isOpen={isOpen}>
+      <div className="collapse navbar-collapse">
           {buildNavbar()}
       </div>
     </nav>
