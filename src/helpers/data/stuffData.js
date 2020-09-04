@@ -11,9 +11,12 @@ const getStuffByUid = (uid) => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
+const getStuffById = (stuffId) => axios.get(`${baseUrl}/stuff/${stuffId}.json`);
+
 const addStuff = (newJunk) => axios.post(`${baseUrl}/stuff.json`, newJunk);
 
 export default {
   getStuffByUid,
   addStuff,
+  getStuffById,
 };
